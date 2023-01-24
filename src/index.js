@@ -20,6 +20,11 @@ root.render(
         ::after,
         ::before {
           box-sizing: border-box;
+          margin: 0px;
+          /* background-color: #f4f6f8; */
+        }
+        ul {
+          list-style: none;
         }
       `}
     />
