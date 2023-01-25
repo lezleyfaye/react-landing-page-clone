@@ -2,7 +2,10 @@
 import { css } from '@emotion/react';
 import { ReactComponent as AmazonLogo } from './images/amazonLogo.svg';
 import { ReactComponent as CalmLogo } from './images/calmLogo.svg';
+import { ReactComponent as FbIcon } from './images/fbIcon.svg';
+import { ReactComponent as InstaIcon } from './images/instaIcon.svg';
 import { ReactComponent as StarReview } from './images/starReview.svg';
+import { ReactComponent as TwitterIcon } from './images/twitterIcon.svg';
 
 // import { ReactComponent as CalmTheMind } from './images/calmTheMind.svg';
 
@@ -126,17 +129,16 @@ const centerButton = css`
 const authorContentStyle = css`
   /* border: 1px solid black; */
   margin: 0px auto;
-  padding: 2rem 2rem;
+  padding-top: 2rem;
+  padding-bottom: 200px;
   text-align: center;
 `;
 
 const authorChildStyle = css`
   display: inline-block;
-  /* border: 1px solid red; */
   padding: 1rem 1rem;
   vertical-align: middle;
   margin-left: 30px;
-  margin-bottom: 300px;
 `;
 
 const authorPhotoStyle = css`
@@ -149,27 +151,48 @@ const twitterLinkStyle = css`
   font-weight: 600;
   letter-spacing: 0.05rem;
   text-decoration: none;
+  color: #009af9;
 `;
+
+// const footerStyle = css`
+//   height: 300px;
+//   padding: 50px 50px; */
+//   /* background-color: red;
+// `;
 
 const mainFooterStyle = css`
   display: flex;
   justify-content: center;
+  gap: 225px;
   width: 100%;
   margin-top: 650px;
 `;
 
 const footerH2ListStyle = css`
-  font-size: 18px;
-  font-weight: 500;
-  color: #555555;
-  letter-spacing: 0.05rem;
-`;
-
-const footerContentStyle = css`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: #555555;
   letter-spacing: 0.05rem;
+  text-align: left;
+  padding-bottom: 15px;
+`;
+
+const footerContentStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #555555;
+  letter-spacing: 0.05rem;
+  text-align: left;
+`;
+
+const footerIconStyle = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
 `;
 
 const copyrightStyle = css`
@@ -178,6 +201,7 @@ const copyrightStyle = css`
   color: #555555;
   letter-spacing: 0.05rem;
   text-align: center;
+  padding-top: 56px;
 `;
 
 function App() {
@@ -266,14 +290,14 @@ function App() {
             <div css={textGradientStyle}>Now available on Amazon</div>
             <div css={centerButton}>
               <button css={amazonButtonStyle}>
-                <div>
+                <div css={amazonLogoStyle}>
                   <AmazonLogo />
                 </div>
-                <div>Purchase</div>
+                <div css={purchaseTextStyle}>Purchase</div>
               </button>
             </div>
           </div>
-          {/* this dov contains both author blurbs */}
+          {/* this div contains both author blurbs */}
           <div css={textGradientStyle}>
             Meet the Authors
             {/* this div contains one author info */}
@@ -286,7 +310,7 @@ function App() {
                 />
                 <p css={paragraphDescriptionStyle}>Michael Acton Smith</p>
                 <a css={twitterLinkStyle} href="https://twitter.com/acton">
-                  @smith
+                  @acton
                 </a>
               </div>
               {/* this div contains one author info */}
@@ -311,47 +335,59 @@ function App() {
           <div css={mainFooterStyle}>
             <div>
               <h2 css={footerH2ListStyle}>Company</h2>
-              <ul css={footerContentStyle}>
-                <li>About</li>
-                <li>Careers</li>
-                <li>Press</li>
-                <li>Blog</li>
-                <li>Meet our Instructor</li>
-                <li>Calm Science</li>
-              </ul>
+              <div>
+                <ul css={footerContentStyle}>
+                  <li>About</li>
+                  <li>Careers</li>
+                  <li>Press</li>
+                  <li>Blog</li>
+                  <li>Meet our Instructor</li>
+                  <li>Calm Science</li>
+                </ul>
+              </div>
             </div>
             <div>
               <h2 css={footerH2ListStyle}>Offers</h2>
-              <ul css={footerContentStyle}>
-                <li>Buy a Gift</li>
-                <li>Redeem a Gift</li>
-                <li>Family Plan</li>
-                <li>Calm Health</li>
-                <li>Calm for Business</li>
-              </ul>
+              <div>
+                <ul css={footerContentStyle}>
+                  <li>Buy a Gift</li>
+                  <li>Redeem a Gift</li>
+                  <li>Family Plan</li>
+                  <li>Calm Health</li>
+                  <li>Calm for Business</li>
+                </ul>
+              </div>
             </div>
             <div>
               <h2 css={footerH2ListStyle}>Help</h2>
-              <ul css={footerContentStyle}>
-                <li>FAQ</li>
-                <li>Contact Us</li>
-                <li>Terms</li>
-                <li>Privacy</li>
-                <li>CCPA Notice</li>
-                <li>Accessibility Statement</li>
-                <li>Opt Out of Targeted Ads</li>
-                <li>Cookies</li>
-              </ul>
+              <div>
+                <ul css={footerContentStyle}>
+                  <li>FAQ</li>
+                  <li>Contact Us</li>
+                  <li>Terms</li>
+                  <li>Privacy</li>
+                  <li>CCPA Notice</li>
+                  <li>Accessibility Statement</li>
+                  <li>Opt Out of Targeted Ads</li>
+                  <li>Cookies</li>
+                </ul>
+              </div>
             </div>
-            <ul css={footerContentStyle}>
+            <ul css={footerIconStyle}>
               <li>
-                <a href="/#">fb</a>
+                <a href="/#">
+                  <FbIcon />
+                </a>
               </li>
               <li>
-                <a href="/#">insta</a>
+                <a href="/#">
+                  <InstaIcon />
+                </a>
               </li>
               <li>
-                <a href="/#">twitter</a>
+                <a href="/#">
+                  <TwitterIcon />
+                </a>
               </li>
             </ul>
           </div>
