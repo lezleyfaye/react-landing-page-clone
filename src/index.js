@@ -21,7 +21,7 @@ root.render(
         ::before {
           box-sizing: border-box;
           margin: 0px;
-          /* background-color: #f4f6f8; */
+          background-color: #f4f6f8;
         }
         ul {
           list-style: none;
